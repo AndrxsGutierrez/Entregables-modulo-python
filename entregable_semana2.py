@@ -43,6 +43,7 @@ while True:
             # Add product to inventory
             new_product = add_product()
             inventory.append(new_product)
+            print('Product added successfully!')
         case 2:
             #This if checks whether the inventory is empty, if not, it goes to the else and prints all the products
             print('\n-----INVENTORY-----')
