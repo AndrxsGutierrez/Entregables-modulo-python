@@ -86,23 +86,23 @@ def statistics(inventory):
         return
     total = 0
     total_product = 0
-    most_expensive_product = {"price": 0}
-    product_greater_quantity = {"quantity": 0}
+    max_price = {"price": 0}
+    max_quantity = {"quantity": 0}
 
     for i in inventory:
         total += i['price'] * i['quantity']
         total_product += i['quantity']
         
     for product in inventory:
-        if product['price'] > most_expensive_product['price']:
-            most_expensive_product = product
-        if product['quantity'] > product_greater_quantity['quantity']:
-            product_greater_quantity = product
+        if product['price'] > max_price['price']:
+            max_price = product
+        if product['quantity'] > max_quantity['quantity']:
+            max_quantity = product
 
 
     print('\n------------------------STATISTICS-------------------------')
     print('The total value of the inventory is', total)
     print(f'The total number of product types in the inventory is {len(inventory)}')
     print('The total number of products in the inventory is', total_product)
-    print('The most expensive product is', most_expensive_product['name'], 'with a price of', most_expensive_product['price'])
-    print('The product with greater quantity is', product_greater_quantity['name'], 'with a quantity of', product_greater_quantity['quantity'])
+    print('The most expensive product is', max_price['name'], 'with a price of', max_price['price'])
+    print('The product with greater quantity is', max_quantity['name'], 'with a quantity of', max_quantity['quantity'])
